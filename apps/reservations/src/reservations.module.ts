@@ -7,6 +7,7 @@ import {
   ReservationSchema,
 } from './models/reservation.schema';
 import { ReservationsRepository } from './reservations.repository';
+import { LoggerModule } from '@app/common';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ReservationsRepository } from './reservations.repository';
         schema: ReservationSchema,
       },
     ]),
+    LoggerModule,
   ],
   controllers: [ReservationsController],
   providers: [ReservationsService, ReservationsRepository],
